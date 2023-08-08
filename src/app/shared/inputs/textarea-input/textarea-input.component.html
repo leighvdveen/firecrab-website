@@ -1,0 +1,11 @@
+<textarea
+    class="input-group-control"
+    [id]="id"
+    [placeholder]="placeholder"
+    [rows]="rows"
+    [value]="value || ''"
+    #input
+    (keyup)="setValue(input.value)"
+    (focus)="onTouched()"
+    autosize>
+</textarea>

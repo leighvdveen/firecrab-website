@@ -1,0 +1,31 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+
+.input-group {
+    position: relative;
+
+    &:focus-within .input-group-control {
+        @include border(1px solid $activeBlue !important);
+    }
+
+    &:hover .input-group-control {
+        background: $grayBackground;
+    }
+
+    &-control {
+        padding-left: 70px;
+        @include fonts(19px, 400, 61.5px, $greyFill);
+
+        &::placeholder {
+            @include fonts(19px, 400, 61.5px, $grayPlaceholder);
+        }
+
+        &:focus {
+            @include border(1px solid $activeBlue !important);
+        }
+    }
+}
+
+mat-datepicker-toggle {
+    @include position(absolute, unset, 20px, 23px, unset);
+}

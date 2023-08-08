@@ -1,0 +1,571 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+section {
+    position: relative;
+    overflow-x: hidden;
+    @include box-model(100%, fit-content, $mainBlack, 0, 173px 150px 0);
+
+    .description {
+        max-width: 538px;
+        @include fonts(20px, 400, 129%, $textSecondary);
+    }
+
+    .button-group {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    h3 {
+        margin-right: 10px;
+    }
+
+    .vector {
+        z-index: 3;
+        @include position(absolute, 40px, 0, unset, unset);
+    }
+
+    .ellipse-1 {
+        box-shadow: 210px 210px 210px;
+        filter: blur(210px);
+        transform: rotate(173.759deg);
+        z-index: 2;
+        @include box-model(640.36px, 797.63px, $ellipseColor);
+        @include position(absolute, -120px, unset, unset, -120px);
+    }
+
+    .ellipse-2 {
+        transform: rotate(-13.80deg);
+        transform-origin: 0 0;
+        box-shadow: 310px 310px 310px;
+        filter: blur(310px);
+        z-index: 1;
+        @include box-model(607.50px, 756.70px, $secondaryEllipseColor);
+        @include position(absolute, 240px, 40%, unset, unset);
+    }
+}
+
+.first-block {
+    margin-bottom: 133px;
+    z-index: 100;
+    position: relative;
+    text-align: center;
+    @include flexbox(center, center, column);
+
+    &-title {
+        max-width: 776px;
+        margin-bottom: 25px;
+    }
+
+    &-description {
+        word-wrap: break-word;
+        @include fonts(24px, 500, 29.04px, $textMain);
+    }
+
+    .btn-main {
+        margin-top: 83px;
+    }
+}
+
+.second-block {
+    margin-bottom: 70px;
+    z-index: 100;
+    position: relative;
+
+    &-p1 {
+        width: 100%;
+        margin-bottom: 35px;
+        @include flexbox(space-between, center);
+    }
+
+    &-p2 {
+        width: 100%;
+        margin-bottom: 72px;
+        @include flexbox(space-between, flex-start);
+
+        &-image {
+            border-radius: 24px;
+            @include box-model(104px, 104px, linear-gradient(159deg, $mainRed 0%, $mainYellow 100%), 0 0 24px);
+            @include flexbox(center, center);
+        }
+
+        &-title {
+            text-transform: capitalize;
+            margin-bottom: 16px;
+            @include fonts(28px, 400, normal, $textMain);
+        }
+
+        &-description {
+            max-width: 345px;
+            text-transform: capitalize;
+            @include fonts(16px, 400, 32px, $textSecondary, normal, $fontGrotesk);
+        }
+
+        &-card {
+            margin: 0 10px;
+        }
+    }
+
+    &-p3 {
+        justify-content: center;
+    }
+}
+
+.third-block {
+    margin-bottom: 139px;
+    @include flexbox(space-between, center);
+
+    h3 {
+        max-width: 567px;
+        margin-bottom: 47px;
+    }
+
+    &-p1 {
+        &-description {
+            max-width: 652px;
+            margin-bottom: 48px;
+            margin-right: 10px;
+            @include fonts(20px, 400, 129%, $textSecondary);
+        }
+    }
+
+    &-p2 {
+        position: relative;
+        z-index: 100;
+        @include box-model(523px, 356px, transparent);
+
+        .ellipse-3 {
+            z-index: -1;
+            @include position(absolute, -35px, -35px, unset, unset);
+        }
+
+        .ellipse-4 {
+            z-index: -1;
+            @include position(absolute, unset, unset, -70px, -55px);
+        }
+    }
+}
+
+.fourth-block-wrap {
+    border-top-right-radius: 19px;
+    border-bottom-right-radius: 19px;
+    @include box-model(100%, 286px, linear-gradient(45deg, $mainYellow 60%, $mainRed 100%), 0 auto 70px);
+    @include flexbox(center, center);
+}
+
+.fourth-block {
+    border-top-right-radius: 19px;
+    border-bottom-right-radius: 19px;
+    position: relative;
+    overflow: hidden;
+    @include box-model(calc(100% - 2px), 282px, $secondaryBlack, 0, 0 47px);
+    @include flexbox(space-between, center);
+
+    &-description {
+        @include fonts(20px, 400, 129%, $textMain);
+    }
+
+    &-p1 {
+        max-width: 610px;
+        z-index: 100;
+    }
+
+    &-buttons {
+        margin-top: 44px;
+
+        .btn-primary {
+            &::before {
+                @include buttons(calc(100% - 4px), calc(100% - 4px), $secondaryBlack);
+                @include position(absolute, 2px, 2px, 2px, 2px);
+                
+            }
+
+            &:hover::before {
+                background: linear-gradient(159deg, $mainRed 0%, $mainYellow 100%);
+            }
+        }
+    }
+
+    h2 {
+        width: 384px;
+        z-index: 100;
+    }
+
+    .circle-1,
+    .circle-2,
+    .circle-3,
+    .circle-4 {
+        transform: rotate(90deg);
+        transform-origin: 0 0;
+        border-radius: 90%;
+        @include box-model(368.22px, 349.23px, linear-gradient(159deg, #CC1102 0%, #FF8534 100%));
+    }
+
+    .circle-1 {
+        z-index: 2;
+        @include position(absolute, unset, 30%, unset, unset);
+    }
+
+    .circle-2 {
+        z-index: 1;
+        @include position(absolute, unset, 20%, unset, unset);
+    }
+
+    .circle-3 {
+        z-index: 2;
+        @include position(absolute, unset, 12%, unset, unset);
+    }
+
+    .circle-4 {
+        z-index: 3;
+        @include position(absolute, unset, 4%, unset, unset);
+    }
+}
+
+.fifth-block {
+    margin-bottom: 70px;
+
+    &-p1 {
+        width: 100%;
+        @include flexbox(space-between, flex-start);
+    }
+
+    &-p2 {
+        margin-top: 45px;
+        width: 100%;
+        @include flexbox(space-between, center);
+
+        &-card {
+            @include flexbox(center, center, column);
+        }
+
+        &-title {
+            text-transform: capitalize;
+            margin-top: 16px;
+            margin-bottom: 12px;
+            @include fonts(28px, 500, normal, $textMain);
+        }
+
+        &-description {
+            text-transform: capitalize;
+            @include fonts(16px, 400, 32px, $textSecondary, normal, $fontGrotesk);
+        }
+    }
+
+    &-p3 {
+        justify-content: center;
+        margin-top: 72px;
+    }
+}
+
+.sixth-block {
+    padding-bottom: 49px;
+
+    &-p1 {
+        width: 100%;
+        margin-top: 60px;
+        @include flexbox(space-between, center);
+
+        &-customer {
+            @include flexbox(unset, center);
+
+            img {
+                margin-right: 32px;
+            }
+
+        }
+
+        h3 {
+            color: rgba(255, 255, 255, 0.06);
+            text-transform: uppercase;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .customer-name-p1 {
+        letter-spacing: 3.026px;
+        margin-right: 16px;
+        @include fonts(55.019px, 500, 146.5%, $textMain);
+    }
+
+    .customer-name-p2 {
+        letter-spacing: 5.502px;
+        @include fonts(22.925px, 300, 146.5%, $textMain);
+    }
+}
+
+@media (max-width: 1520px) {
+    section {
+        padding: 173px 90px 0;
+
+        .ellipse-2 {
+            left: 30%;
+        }
+    }
+
+    .fourth-block {
+
+        .circle-1 {
+            left: 46%;
+        }
+
+        .circle-2 {
+            left: 30%;
+        }
+
+        .circle-3 {
+            left: 18%;
+        }
+
+        .circle-4 {
+            left: 6%;
+        }
+
+        &-buttons {
+            margin-top: 44px;
+
+            .btn-primary {
+                &::before {
+                    @include buttons(calc(100% - 2px), calc(100% - 2px), $secondaryBlack);
+                    @include position(absolute, 1px, 1px, 1px, 1px);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .fourth-block {
+        padding-right: 0;
+    }
+
+    .fifth-block-p2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1335px) {
+    .third-block {
+        flex-direction: column-reverse;
+        gap: 80px;
+
+        &-p1-buttons {
+            justify-content: center;
+        }
+
+        &-p1 {
+            align-self: flex-start;
+            width: 100%;
+        }
+    }
+
+    .fourth-block {
+        .circle-1 {
+            left: 43%;
+        }
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .fourth-block-p1 {
+        max-width: 50%;
+        margin-right: 47px;
+        margin-left: 20px;
+        z-index: 100;
+    }
+}
+
+@media (max-width: 1100px) {
+    .sixth-block-p1 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .second-block-p1,
+    .fifth-block-p1 {
+        flex-direction: column;
+        gap: 50px;
+        align-items: flex-start;
+    }
+
+    .second-block-p2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        &-card {
+            @include flexbox(center, center, column);
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .fourth-block {
+        height: 476px;
+        border-radius: 19px;
+        gap: 10px;
+        padding: 15px;
+        @include flexbox(center, flex-start, column);
+
+        h2 {
+            width: 100%;
+        }
+
+        &-wrap {
+            height: 480px;
+            border-radius: 19px;
+        }
+
+        &-p1 {
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .circle-1 {
+            left: 46%;
+            top: -60px;
+            z-index: 0;
+        }
+
+        .circle-2 {
+            left: 30%;
+            top: -60px;
+        }
+
+        .circle-3 {
+            left: 18%;
+            top: -60px;
+        }
+
+        .circle-4 {
+            left: 6%;
+            top: -60px;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .sixth-block-p1-customer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .third-block-p2 {
+        @include flexbox(center, center);
+
+        .home-image {
+            width: 400px;
+            height: 270px;
+        }
+
+        .ellipse-3 {
+            top: 0;
+            left: 15px;
+        }
+
+        .ellipse-4 {
+            bottom: -30px;
+            right: 15px;
+        }
+    }
+
+    .fourth-block {
+        height: 596px;
+
+        &-wrap {
+            height: 600px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        background-color: $mainBlack;
+        padding: 173px 50px 0;
+
+        .btn-main {
+            width: 100%;
+        }
+
+        .button-group {
+            gap: 30px;
+            @include flexbox(unset, center, column);
+        }
+
+        .fifth-block-p2-card {
+            img {
+                width: 300px;
+                height: 240px;
+            }
+        }
+
+        .third-block-p2 {
+            .home-image {
+                width: 350px;
+                height: 240px;
+            }
+
+            .ellipse-3 {
+                top: 20px;
+                left: 55px;
+            }
+
+            .ellipse-4 {
+                bottom: -10px;
+                right: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .fourth-block {
+        .btn-primary {
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    section {
+        .third-block-p2 {
+            .home-image {
+                width: 300px;
+                height: 190px;
+            }
+
+            .ellipse-3 {
+                top: 40px;
+                left: 75px;
+            }
+
+            .ellipse-4 {
+                bottom: 10px;
+                right: 70px;
+            }
+        }
+
+        .fourth-block {
+            height: 700px;
+
+            &-wrap {
+                height: 702px;
+            }
+        }
+    }
+}

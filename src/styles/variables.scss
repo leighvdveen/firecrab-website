@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@100&family=Space+Grotesk&family=Teko:wght@300&display=swap');
+
+$fontPoppins: 'Poppins', sans-serif;
+$fontGrotesk: 'Space Grotesk', sans-serif;
+
+$textMain: white;
+$textSecondary: rgba(255, 255, 255, 0.80);
+$mainRed: #CC1102;
+$mainYellow: #FF8534;
+$mainBlack: #120F12;
+$secondaryBlack: #171717;
+$footerColor: #06070E;
+$ellipseColor: #E75D02;
+$secondaryEllipseColor: #FF1E00;
+
+// Button/Input
+$grayBackground: rgba(255, 255, 255, 0.10);
+$grayBorder: rgba(255, 255, 255, 0.60);
+$grayText: rgba(255, 255, 255, 0.80);
+$buttonHoverBoxShadow: 5px 3px 25px 0px rgba(240, 113, 98, 0.59);
+
+// Input
+$greyFill: #82746F;
+$grayPlaceholder: #787878;
+$activeBlue: #5598FC;

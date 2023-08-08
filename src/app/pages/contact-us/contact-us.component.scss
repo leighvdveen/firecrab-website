@@ -1,0 +1,119 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+section {
+    overflow: hidden;
+    @include box-model(100%, fit-content, $mainBlack, 0, 174px 92px 157px);
+
+    .page-content {
+        display: flex;
+        @include box-model(70%, fit-content, transparent, auto);
+
+        &-p1,
+        &-p2 {
+            width: 50%;
+        }
+
+        &-p1-image {
+            position: relative;
+            @include box-model(fit-content, fit-content, transparent);
+
+            .contact-us-img {
+                position: relative;
+                z-index: 100;
+            }
+
+            .ellipse-6 {
+                @include position(absolute, -30px, -120px, unset, unset);
+            }
+
+            .ellipse-7 {
+                @include position(absolute, unset, unset, -80px, -25px);
+            }
+
+            .ellipse-8 {
+                @include position(absolute, unset, unset, -65px, 35%);
+            }
+
+            .ellipse-9 {
+                transform: rotate(-13.80deg);
+                transform-origin: 0 0;
+                box-shadow: 310px 310px 310px;
+                filter: blur(310px);
+                @include box-model(373.69px, 465.46px, $secondaryEllipseColor);
+                @include position(absolute, unset, -180px, 0, unset);
+            }
+        }
+    }
+
+    h3 {
+        @include box-model(70%, fit-content, transparent, 0 auto 53px);
+    }
+}
+
+@media (max-width: 1900px) {
+    section {
+        .page-content,
+        h3 {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    section {
+        .page-content {
+            @include flexbox(unset, center, column-reverse);
+            gap: 50px;
+
+            &-p2 {
+                width: 100%;
+            }
+
+            &-p1 {
+                width: 80%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .contact-us-img {
+        width: 100%;
+        height: fit-content;
+    }
+
+    section {
+        .page-content-p1 {
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    section {
+        padding: 174px 40px 157px;
+
+        .page-content-p1-image {
+            .ellipse-6 {
+                width: 150px;
+                top: -30px;
+                left: -90px;
+            }
+
+            .ellipse-7 {
+                width: 130px;
+                right: -45px;
+                bottom: -50px;
+            }
+
+            .ellipse-8 {
+                width: 28px;
+                right: 35%;
+                bottom: -45px;
+            }
+        }
+    }
+}

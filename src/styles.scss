@@ -1,1 +1,75 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$firecrab-primary: mat.define-palette(mat.$indigo-palette);
+$firecrab-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$firecrab-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$firecrab-theme: mat.define-light-theme((
+  color: (
+    primary: $firecrab-primary,
+    accent: $firecrab-accent,
+    warn: $firecrab-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($firecrab-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+@import 'styles/buttons.scss';
+@import 'styles/inputs.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    @include fonts(67px, 700, 121%, $textMain);
+}
+
+h2 {
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    @include fonts(40px, 400, 56px, $textMain);
+}
+
+h3 {
+    position: relative;
+    @include fonts(36px, 500, 146.5%, $textMain);
+
+    &::after {
+        content: '';
+        border-radius: 28px;
+        @include position(absolute, unset, 0, -10px, unset);
+        @include box-model(52px, 2px, $textMain);
+    }
+}
+
+.invlid-message {
+    @include fonts(22px, 400, normal, $mainRed);
+}
+
+html, body { height: 100%; }

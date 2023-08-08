@@ -1,0 +1,81 @@
+<form [formGroup]="form">
+    <div class="display-content-flex">
+        <div class="input-width">
+            <app-form-control>
+                <app-text-input
+                    label="Name"
+                    formControlName="name"
+                    placeholder="Full name">
+                </app-text-input>
+            </app-form-control>
+        </div>
+        <div class="input-width">
+            <app-form-control>
+                <app-text-input
+                    label="Company name"
+                    formControlName="companyName"
+                    placeholder="Company name">
+                </app-text-input>
+            </app-form-control>
+        </div>
+    </div>
+    <div class="display-content-flex">
+        <div class="input-width">
+            <app-form-control>
+                <app-text-input
+                    label="Email"
+                    formControlName="email"
+                    placeholder="hello.example@gmail.com">
+                </app-text-input>
+            </app-form-control>
+        </div>
+        <div class="input-width">
+            <app-form-control>
+                <app-text-input
+                    label="Address"
+                    formControlName="address"
+                    placeholder="Random Address 12">
+                </app-text-input>
+            </app-form-control>
+        </div>
+    </div>
+    <div class="display-content-flex">
+        <div class="input-width">
+            <app-form-control>
+                <app-text-input
+                    label="Country"
+                    formControlName="country"
+                    placeholder="France">
+                </app-text-input>
+            </app-form-control>
+        </div>
+        <div class="input-width">
+            <app-form-control>
+                <app-phone-number-input
+                    label="Phone"
+                    formControlName="phoneNumber">
+                </app-phone-number-input>
+            </app-form-control>
+        </div>
+    </div>
+    <div class="margin-bottom col-12">
+        <app-form-control>
+            <app-textarea-input
+                label="How can we help you?"
+                formControlName="additionalInfo"
+                placeholder="Tell us what we can help you with">
+            </app-textarea-input>
+        </app-form-control>
+    </div>
+    <div class="margin-bottom col-12">
+        <app-form-control>
+            <app-date-input
+                label="Book a consultation"
+                formControlName="dateOfConsultation"
+                placeholder="12 / July / 2023">
+            </app-date-input>
+        </app-form-control>
+    </div>
+    <p *ngIf="submitted" class="invlid-message">* Please fill in all required fields.</p>
+    <button class="btn btn-secondary" (click)="onSubmit()">Submit</button>
+</form>

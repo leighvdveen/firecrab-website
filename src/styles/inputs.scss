@@ -1,0 +1,57 @@
+.input-group {
+    @include flexbox(center, unset, column);
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: $fontPoppins;
+
+    &-control {
+        @include box-model(100%, 70px, transparent, 0, 18px 30px);
+        @include fonts(17px, 400, normal, $greyFill);
+        @include border(1px solid $textMain);
+
+        &::placeholder {
+            @include fonts(17px, 400, normal, $grayPlaceholder);
+        }
+
+        &:hover {
+            background: $grayBackground;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $activeBlue;
+            background: transparent !important;
+        }
+
+    }
+
+    &-label {
+        @include fonts(18px, 400, normal, $textMain);
+    }
+
+    &:focus-within .input-group-label {
+        color: $activeBlue;
+    }
+
+    textarea {
+        line-height: 20px;
+        min-height: 70px;
+        max-height: 188px;
+        letter-spacing: -0.32px;
+        resize: vertical;
+        padding-top: 20px;
+        @include flexbox(center, unset);
+
+        &::-webkit-resizer {
+            display: none;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+    }
+}

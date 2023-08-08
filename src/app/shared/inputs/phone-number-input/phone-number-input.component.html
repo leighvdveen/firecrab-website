@@ -1,0 +1,27 @@
+<form
+    [formGroup]="phoneNumberForm"
+    class="input-group">
+    <div class="input-phone">
+        <div class="input-phone-code" (click)="showCountriesCode = !showCountriesCode" #phoneCodeContainer>
+            <p><img [src]="countryCode.logo" width="28px" height="19px" style="margin-right: 10px;">{{ countryCode.code }}</p>
+            <img src="../../../../assets/images/small-chevron-down.svg" style="margin-left: 5px">
+        </div>
+        <input
+            [id]="id"
+            (focus)="onTouched()"
+            formControlName="phoneNumber"
+            type="tel" class="input-phone-number"
+            placeholder="000-000-000"
+            mask='000-000-000'>
+    </div>
+    <ul *ngIf="showCountriesCode">
+        <li *ngFor="let item of countries; index as i" [ngClass]="{'even': i % 2 === 0 }" (click)="onSelectCode(item)">
+            <img
+                [src]="item.flags.svg"
+                width="20px"
+                height="12px"
+                style="margin-right: 10px;"/>
+            {{ item.name.common }}
+        </li>
+    </ul>
+</form>

@@ -1,0 +1,11 @@
+<div class="input-group">
+    <label *ngIf="label" [for]="id" class="input-group-label"> {{ label }} </label>
+
+    <div class="input-control-wrapper">
+        <ng-content></ng-content>
+    </div>
+
+    <ng-container *ngIf="hasError">
+        <p class="invlid-message">{{ error }}</p>
+    </ng-container>
+</div>

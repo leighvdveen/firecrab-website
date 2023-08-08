@@ -1,0 +1,136 @@
+.btn {
+    cursor: pointer;
+    font-family: $fontPoppins;
+    word-wrap: break-word;
+    text-align: center;
+    overflow: hidden;
+    @include flexbox(center, center);
+    @include border(none, 10px);
+
+    &-main {
+        box-shadow: 5px 3px 25px rgba(33, 17, 29, 0.19);
+        @include buttons(449px, 88px, linear-gradient(159deg, $mainRed 0%, $mainYellow 100%));
+        @include border(2px $textMain solid);
+        @include fonts(25px, 500, 32.25px, $textMain);
+
+        &:hover {
+            @include border(2px transparent solid);
+            box-shadow: $buttonHoverBoxShadow;
+        }
+
+        &:active {
+            background: $mainRed;
+            @include border(2px transparent solid);
+            box-shadow: none;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background: $grayBackground;
+            @include border(1px $grayBorder solid);
+            color: $grayText;
+            box-shadow: none;
+        }
+    }
+
+    &-secondary {
+        @include buttons(198px, 69px, transparent);
+        @include border(0.50px $grayBorder solid);
+        @include fonts(18px, 400, 23.22px, $grayText);
+
+        &:hover {
+            box-shadow: $buttonHoverBoxShadow;
+            background: linear-gradient(159deg, $mainRed 0%, $mainYellow 100%);
+            border: 0.50px transparent solid;
+            color: $textMain;
+        }
+
+        &:active {
+            background: $mainRed;
+            border: 0.50px transparent solid;
+            box-shadow: none;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background: $grayBackground;
+            border: 1px $grayBorder solid;
+            color: $grayText;
+            box-shadow: none;
+        }
+    }
+
+    &-primary {
+        outline: none;
+        position: relative;
+        z-index: 1;
+        @include buttons(304px, 69px, linear-gradient(159deg, $mainRed 0%, $mainYellow 100%));
+        @include border(none);
+        @include fonts(18px, 400, 23.22px, $grayText);
+
+        &::before {
+            content: "";
+            z-index: -1;
+            @include buttons(calc(100% - 2px), calc(100% - 2px), $mainBlack);
+            @include position(absolute, 1px, 1px, 1px, 1px);
+            @include border(none);
+        }
+
+        &::after {
+            content: attr(data);
+            background: linear-gradient(12deg, $mainYellow 60%, $mainRed 100%);
+            background-clip: text;
+            @include fonts(18px, 500, 23.22px, transparent);
+        }
+
+        &:active {
+            background: $mainRed;
+            box-shadow: none !important;
+
+            &:before {
+                background: $mainRed !important;
+                border: 0.50px transparent solid;
+                box-shadow: none;
+            }
+
+            &::after {
+                background: $textMain;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+
+        &:hover {
+            box-shadow: $buttonHoverBoxShadow;
+
+            &::before {
+                background: linear-gradient(159deg, $mainRed 0%, $mainYellow 100%);
+                box-shadow: none;
+            }
+
+            &::after {
+                background: $textMain;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background: $grayBackground;
+            border: 1px $grayBorder solid;
+            color: $grayText;
+            box-shadow: none;
+
+            &::before {
+                display: none;
+            }
+
+            &::after {
+                background: $grayText;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+    }
+}

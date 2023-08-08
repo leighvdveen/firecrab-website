@@ -1,0 +1,104 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.header {
+    position: relative;
+    overflow-x: hidden;
+    @include box-model(100%, fit-content, transparent, 0, 34px 92px);
+}
+
+.navbar {
+    width: 100%;
+    position: relative;
+    @include flexbox(center, center);
+
+    &-menu {
+        width: 640px;
+        @include flexbox(space-between, center);
+    }
+
+    &-link {
+        text-decoration: none;
+        @include fonts(25px, 500, 30.25px, $grayBorder);
+
+        &-active {
+            color: $textMain;
+        }
+    }
+}
+
+.logo-image {
+    position: absolute;
+    left: 0px;
+}
+
+.material-symbols-outlined {
+    color: $textMain;
+    font-size: 32px;
+}
+
+@media (max-width: 1100px) {
+    .header {
+        padding: 34px 30px;
+    }
+
+    .navbar {
+        justify-content: flex-end;
+
+        &-menu {
+            width: 500px;
+        }
+    }
+
+    .logo-image {
+        left: 0;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .header {
+        height: 200px;
+    }
+
+    .navbar {
+        @include flexbox(space-between, flex-start);
+
+        &-menu {
+            @include position(absolute, 60px, 0, unset, unset);
+            width: 100%;
+            animation: 0.5s ease-out 0s 1 slideIn;
+        }
+
+        &-link {
+            font-size: 20px;
+            margin: 0 10px;
+        }
+    }
+
+    .logo-image {
+        position: static;
+        left: 0;
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+}
+
+@media (max-width: 530px) {
+
+    .navbar-menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+}

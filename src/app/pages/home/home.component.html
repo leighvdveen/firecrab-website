@@ -1,0 +1,92 @@
+<section>
+    <img src="../../../assets/images/Vector.svg" width="100%" class="vector">
+    <div class="ellipse-1"></div>
+    <div class="ellipse-2"></div>
+    <div class="first-block">
+        <h1 class="first-block-title">Firecrab Tech Writing Solutions</h1>
+        <p class="first-block-description">Specialist Tech Writing and Medical Writing with a human touch</p>
+        <button class="btn btn-main" routerLink="/contact-us">Book a Free Strategy Session</button>
+    </div>
+    <div class="second-block">
+        <div class="second-block-p1">
+            <h3>How We Can Help?</h3>
+            <p class="second-block-p1-description description">Do you have a content strategy for your product that works? We can help you with this and all the difficulties will fall on us</p>
+        </div>
+        <div class="second-block-p2">
+            <div class="second-block-p2-card" *ngFor="let item of helpStrategies">
+                <div class="second-block-p2-image">
+                    <img [ngSrc]="item.imgSrc" [alt]="item.title" width="48" height="48">
+                </div>
+                <p class="second-block-p2-title">{{ item.title }}</p>
+                <p class="second-block-p2-description">{{ item.description }}</p>
+            </div>
+        </div>
+        <div class="second-block-p3 button-group">
+            <button class="btn btn-primary" data="Book a Free Strategy Session" routerLink="/contact-us"></button>
+            <button class="btn btn-secondary" routerLink="/services">View Services</button>
+        </div>
+    </div>
+    <div class="third-block">
+        <div class="third-block-p1">
+            <h3>Does Your Documentation Add Value to Your Product?</h3>
+            <p class="third-block-p1-description">More than 66% of clients rely on customer-facing documentation for purchasing decisions. Let our documentation specialists write your user-documentation for you</p>
+            <div class="third-block-p1-buttons button-group">
+                <button class="btn btn-primary" data="Book a Free Strategy Session" routerLink="/contact-us"></button>
+                <button class="btn btn-secondary" routerLink="/services">View Services</button>
+            </div>
+        </div>
+        <div class="third-block-p2">
+            <img ngSrc="../../../assets/images/home-img.png" class="home-image" width="532" height="356">
+            <img ngSrc="../../../assets/images/Ellipse-3.svg" class="ellipse-3" width="90" height="90">
+            <img ngSrc="../../../assets/images/Ellipse-4.svg" class="ellipse-4" width="180" height="180">
+        </div>
+    </div>
+    <div class="fourth-block-wrap">
+        <div class="fourth-block">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+            <div class="circle-4"></div>
+            <h2>Do your docs help/<br>hinder your users?</h2>
+            <div class="fourth-block-p1">
+                <p class="fourth-block-description">Let us design and write your docs for you. Firecrab specializes in writing customer-facing and internal docs.
+                </p>
+                <div class="fourth-block-buttons button-group">
+                    <button class="btn btn-primary" data="Book a Free Strategy Session" routerLink="/contact-us"></button>
+                    <button class="btn btn-secondary" routerLink="/services">View Services</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fifth-block">
+        <div class="fifth-block-p1">
+            <h3>How it Works?</h3>
+            <div class="second-block-p1-description description">
+                <p style="margin-bottom: 30px;">We start by discussing your content strategy | documentation | goals | needs | requirements.</p>
+                <p>Firecrab specializes in transparent outcomes and strong timelines with clear, consistent communication.</p>
+            </div>
+        </div>
+        <div class="fifth-block-p2">
+            <div class="fifth-block-p2-card" *ngFor="let item of workStrategies">
+                <img [ngSrc]="item.imgSrc" [alt]="item.title" width="400" height="324">
+                <p class="fifth-block-p2-title">{{ item.title }}</p>
+                <p class="fifth-block-p2-description">{{ item.description }}</p>
+            </div>
+        </div>
+        <div class="fifth-block-p3 button-group">
+            <button class="btn btn-primary" data="Book a Free Strategy Session" routerLink="/contact-us"></button>
+            <button class="btn btn-secondary" routerLink="/services">View Services</button>
+        </div>
+    </div>
+    <div class="sixth-block">
+        <h3>Our Customer</h3>
+        <div class="sixth-block-p1">
+            <div class="sixth-block-p1-customer">
+                <img ngSrc="../../../assets/images/maka-health.svg" alt="maka-health" width="195" height="161">
+                <p class="customer-name-p1">Maka</p>
+                <p class="customer-name-p2">HEALTH</p>
+            </div>
+            <h3>Comming soon</h3>
+        </div>
+    </div>
+</section>

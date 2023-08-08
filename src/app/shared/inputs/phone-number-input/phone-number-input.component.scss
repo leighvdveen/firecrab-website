@@ -1,0 +1,95 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+
+.input-phone {
+    @include box-model(100%, 70px, transparent);
+    @include flexbox(unset, center);
+    @include border(1px solid $textMain);
+
+    &:hover {
+        background: $grayBackground;
+    }
+
+    &:focus-within,
+    &:active {
+        border-color: $activeBlue;
+        background: transparent !important;
+    }
+
+    &-label {
+        @include fonts(18px, 400, normal, $textMain);
+    }
+
+    &-number {
+        border: none;
+        outline: none;
+        letter-spacing: -0.32px;
+        @include box-model(55%, 100%, inherit);
+        @include fonts(17px, 400, 20px, #B4B4B4);
+
+        &::placeholder {
+            @include fonts(17px, 400, normal, $grayPlaceholder);
+        }
+    }
+
+    &-code {
+        border: none;
+        outline: none;
+        letter-spacing: -0.32px;
+        @include flexbox(unset, center);
+        @include box-model(45%, 100%, inherit, 0, 0 0 0 20px);
+        @include fonts(17px, 400, 20px, $textMain);
+
+        option {
+            color: #202020;
+            font-size: 16px;
+
+            &:hover {
+                border-radius: 3px;
+                background: rgba(85, 152, 252, 0.20);
+            }
+        }
+    }
+}
+
+.input-group {
+    position: relative;
+}
+
+ul {
+    overflow-y: scroll;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 16px solid transparent;
+    border-right-width: 8px;
+    outline: none;
+    z-index: 100;
+    @include box-model(100%, 345px, white);
+    @include position(absolute, 70px, unset, unset, unset);
+
+    li {
+        list-style: none;
+        padding: 16px 0px 16px 10px;
+
+        &:hover {
+            background: rgba(85, 152, 252, 0.20);
+        }
+    }
+
+    .even {
+        background: #F8F8F8;
+    }
+
+    &::-webkit-scrollbar {
+        width: .40rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: lightgray;
+        border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}

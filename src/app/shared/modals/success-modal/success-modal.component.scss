@@ -1,0 +1,112 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+
+.modal {
+    z-index: 1000;
+    @include box-model(100%, 100vh, transparent);
+    @include flexbox(center, center);
+    @include position(fixed, 0, 0, 0, 0);
+
+    &-body {
+        position: relative;
+        @include box-model(999px, 389px, $textMain, 0 30px);
+        @include flexbox(unset, unset, column);
+        @include border(none, 28px);
+
+        &-content {
+            text-align: center;
+            @include flexbox(center, center, column);
+        }
+
+        h1 {
+            width: 100%;
+            margin-bottom: 37px;
+            @include fonts(50px, 700, 134.9%, #B4B4B4);
+        }
+
+        p {
+            max-width: 748px;
+            @include fonts(27px, 500, 134.9%, #818181);
+        }
+
+        .close-img {
+            align-self: flex-end;
+            margin: 35px 43px 10px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .success-icon {
+            @include box-model(213px, 213px, transparent, auto);
+            @include position(absolute, -30%, 0, unset, 0);
+        }
+
+        .green-box {
+            z-index: -1;
+            flex-shrink: 0;
+            @include box-model(688px, 173px, #62D591,auto);
+            @include position(absolute, unset, 0, -39px, 0);
+            @include border(none, 28px);
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .modal-body {
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 22px;
+            margin: 0 30px;
+        }
+
+        .close-img {
+            margin: 35px 43px 40px;
+        }
+
+        .success-icon {
+            top: -20%;
+            @include box-model(180px, 180px, transparent, auto);
+        }
+
+        .green-box {
+            width: 488px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-body {
+        .close-img {
+            margin: 35px 20px 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .success-icon {
+            @include box-model(40%, 40%, transparent, auto);
+        }
+
+        .green-box {
+            width: 80%;
+            bottom: -25px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .modal-body {
+
+        h1 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+}

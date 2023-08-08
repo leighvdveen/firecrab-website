@@ -1,0 +1,41 @@
+.margin-bottom {
+    margin-bottom: 37px;
+}
+
+.col-6 {
+    width: calc(50% - 18px);
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.display-content-flex {
+    display: flex;
+    gap: 37px;
+    margin-bottom: 33px;
+}
+
+.btn-secondary {
+    align-self: flex-end;
+    z-index: 100;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-width {
+   width: 50%; 
+}
+
+@media (max-width: 750px) {
+    .input-width {
+        width: 100%; 
+    }
+
+    .display-content-flex {
+        flex-wrap: wrap;
+    }
+}

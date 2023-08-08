@@ -1,0 +1,11 @@
+app-root {
+    position: relative;
+}
+
+app-header {
+    z-index: 1000;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

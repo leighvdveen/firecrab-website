@@ -1,0 +1,104 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.logo {
+    @include box-model(193px, fit-content, transparent);
+    @include position(absolute, 28px, 90px, unset, unset);
+
+    .company-info {
+        word-wrap: break-word;
+        @include fonts(17px, 400, normal, $textMain);
+    }
+}
+
+.footer {
+    position: relative;
+    @include box-model(100%, 303px, $footerColor);
+    @include flexbox(center, center);
+
+    &-menu {
+        @include box-model(550px, fit-content, transparent, 0 auto 37px);
+        @include flexbox(space-between, center);
+    }
+
+    &-link {
+        text-decoration: none;
+        @include fonts(17px, 400, normal, $textMain);
+    }
+
+    .contacts {
+        @include box-model(656px, fit-content, transparent, 0 auto 37px);
+        @include fonts(17px, 400, normal, $textMain);
+        @include flexbox(space-between, center);
+
+        &-content {
+            display: flex;
+            align-items: center;
+            @include flexbox(unset, center);
+        }
+
+        &-img {
+            margin-right: 11px;
+        }
+
+        &-logo {
+            display: flex;
+            margin-right: 15px;
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        @include fonts(17px, 400, normal, $grayBorder);
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer {
+        justify-content: space-around;
+        @include box-model(100%, 350px, $footerColor);
+        @include flexbox(space-around, center, column);
+    }
+
+    .logo {
+        text-align: center;
+        @include position(static, 0, 0, unset, unset);
+    }
+}
+
+@media (max-width: 700px) {
+    .footer {
+
+        &-menu {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .contacts {
+            width: 100%;
+            gap: 20px;
+            @include flexbox(center, center, column);
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .contacts-content {
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    .footer {
+        @include box-model(100%, 500px, $footerColor, 0, 20px 0);
+
+        &-menu {
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        &-link {
+            margin: 0 5px;
+        }
+    }
+}

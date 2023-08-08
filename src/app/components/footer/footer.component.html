@@ -1,0 +1,21 @@
+<footer class="footer">
+    <div class="logo">
+        <img ngSrc="../../../assets/images/firecrab-logo.svg" alt="logo-image" width="101" height="60"/>
+        <p class="company-info">Company location: South Africa</p>
+    </div>
+    <div>
+        <div class="footer-menu">
+            <a *ngFor="let item of componentsRoutes" [routerLink]="[item.path]" class="footer-link">{{ item.name }}</a>
+        </div>
+        <div class="contacts">
+            <div class="contacts-content" *ngFor="let item of contactsData">
+                <div class="contacts-logo">
+                    <img [ngSrc]="item.imgSrc" class="contacts-img" [width]="item.width" [height]="item.height">
+                    <p>{{ item.title }}</p>
+                </div>
+                <p>{{ item.description }}</p>
+            </div>
+        </div>
+        <p class="copyright">Copyright © 2023 All rights reserved</p>
+    </div>
+</footer>
