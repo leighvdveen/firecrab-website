@@ -1,0 +1,31 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+
+.navbar {
+    &-menu {
+        @include position(fixed, 120px, 0, 0, 0);
+        z-index: 999;
+        gap: 80px;
+        @include box-model(100%, 100vh, $mainBlack, 0, 30px);
+        @include flexbox(flex-start, center, column);
+
+        .blur {
+            transform: rotate(173.76deg);
+            transform-origin: 0 0;
+            box-shadow: 210px 210px 210px;
+            filter: blur(210px);
+            @include box-model(299.74px, 373.35px, $ellipseColor);
+            @include position(absolute, unset, 70%, -40%, unset);
+        }
+    }
+
+    &-link {
+        text-decoration: none;
+        outline: none;
+        @include fonts(30px, 500, 30.25px, $grayBorder);
+
+        &-active {
+            color: $textMain;
+        }
+    }
+}

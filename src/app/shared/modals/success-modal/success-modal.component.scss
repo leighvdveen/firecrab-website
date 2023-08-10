@@ -21,7 +21,7 @@
         h1 {
             width: 100%;
             margin-bottom: 37px;
-            @include fonts(50px, 700, 134.9%, #B4B4B4);
+            @include fonts(50px, 700, 134.9%, $textMinor);
         }
 
         p {

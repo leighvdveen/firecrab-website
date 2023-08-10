@@ -32,3 +32,19 @@ export interface ErrorsMessageData {
     required: string;
     email: string;
 }
+
+export interface ServiceData {
+    title: string;
+    description: string;
+    list: string[];
+    imgSrc: string;
+    imgSize: number;
+    groupClass: string;
+}
+
+export interface ServicePlan {
+    title: string;
+    list: string[];
+    list2?: string[];
+    activeClass: boolean;
+}

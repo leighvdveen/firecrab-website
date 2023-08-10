@@ -25,7 +25,7 @@
         outline: none;
         letter-spacing: -0.32px;
         @include box-model(55%, 100%, inherit);
-        @include fonts(17px, 400, 20px, #B4B4B4);
+        @include fonts(17px, 400, 20px, $textMinor);
 
         &::placeholder {
             @include fonts(17px, 400, normal, $grayPlaceholder);

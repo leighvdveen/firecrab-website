@@ -1,6 +1,6 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
     standalone: true,
@@ -14,11 +14,4 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
         MatDialogModule
     ]
 })
-export class SuccessModalComponent {
-
-    private readonly dialog: MatDialog = inject(MatDialog);
-    
-    public hideModal(): void {
-        this.dialog.closeAll()
-    }
-}
+export class SuccessModalComponent {}

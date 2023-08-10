@@ -1,12 +1,12 @@
-<header class="header">
+<header class="header" [ngClass]="{'menu-open': isNavbarOpen}">
     <div class="navbar">
         <div class="logo-image">
             <img ngSrc="../../../assets/images/firecrab-logo.svg" alt="logo-img" width="84" height="50">
         </div>
-        <div class="navbar-menu" *ngIf="screenWidth > 700 || (screenWidth <= 700 && isNavbarOpen)">
+        <div class="navbar-menu" *ngIf="screenWidth > 700">
             <a *ngFor="let item of componentsRoutes" [routerLink]="[item.path]" routerLinkActive="navbar-link-active" class="navbar-link">{{ item.name }}</a>
         </div>
-        <span class="material-symbols-outlined" *ngIf="screenWidth <= 700" (click)="isNavbarOpen = !isNavbarOpen">
+        <span class="material-symbols-outlined" *ngIf="screenWidth <= 700" (click)="isNavbarOpen ? closeMenu() : openMenu()">
             {{ !isNavbarOpen ? 'menu': 'close'}}
          </span>
     </div>

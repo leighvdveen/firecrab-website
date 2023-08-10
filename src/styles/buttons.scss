@@ -10,6 +10,7 @@
     &-main {
         box-shadow: 5px 3px 25px rgba(33, 17, 29, 0.19);
         @include buttons(449px, 88px, linear-gradient(159deg, $mainRed 0%, $mainYellow 100%));
+        padding: 0 10px;
         @include border(2px $textMain solid);
         @include fonts(25px, 500, 32.25px, $textMain);
 

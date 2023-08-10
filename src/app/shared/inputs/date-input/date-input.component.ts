@@ -1,5 +1,5 @@
 import { Platform } from '@angular/cdk/platform';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule, NativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -22,7 +22,6 @@ export class CustomDateAdapter extends NativeDateAdapter {
 @Component({
     standalone: true,
     selector: 'app-date-input',
-    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './date-input.component.html',
     styleUrls: ['./date-input.component.scss'],
     imports: [

@@ -9,9 +9,12 @@ section {
         display: flex;
         @include box-model(70%, fit-content, transparent, auto);
 
-        &-p1,
+        &-p1 {
+            width: 45%;
+        }
+
         &-p2 {
-            width: 50%;
+            width: 55%;
         }
 
         &-p1-image {
@@ -43,11 +46,20 @@ section {
                 @include box-model(373.69px, 465.46px, $secondaryEllipseColor);
                 @include position(absolute, unset, -180px, 0, unset);
             }
+
+            .ellipse-10 {
+                transform: rotate(173.759deg);
+                box-shadow: 310px 310px 310px;
+                filter: blur(310px);
+                @include box-model(423.856px, 527.951px, $ellipseColor);
+                @include position(absolute, 60px, 0, unset, unset);
+            }
         }
     }
 
     h3 {
         @include box-model(70%, fit-content, transparent, 0 auto 53px);
+        z-index: 10;
     }
 }
 
@@ -60,14 +72,14 @@ section {
     }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1395px) {
     section {
         .page-content {
             @include flexbox(unset, center, column-reverse);
             gap: 50px;
 
             &-p2 {
-                width: 100%;
+                width: 80%;
             }
 
             &-p1 {
@@ -79,16 +91,18 @@ section {
     }
 }
 
+@media (max-width: 1020px) {
+    section {
+        .page-content-p2 {
+            width: 100%;
+        }
+    }
+}
+
 @media (max-width: 750px) {
     .contact-us-img {
         width: 100%;
         height: fit-content;
-    }
-
-    section {
-        .page-content-p1 {
-            width: 80%;
-        }
     }
 }
 

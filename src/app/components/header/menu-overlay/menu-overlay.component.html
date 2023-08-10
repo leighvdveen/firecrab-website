@@ -1,0 +1,4 @@
+<div class="navbar-menu">
+    <a *ngFor="let item of componentsRoutes" [routerLink]="[item.path]" routerLinkActive="navbar-link-active" class="navbar-link">{{ item.name }}</a>
+    <div class="blur"></div>
+</div>

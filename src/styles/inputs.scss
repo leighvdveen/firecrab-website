@@ -40,6 +40,7 @@
         letter-spacing: -0.32px;
         resize: vertical;
         padding-top: 20px;
+        color: $textMinor;
         @include flexbox(center, unset);
 
         &::-webkit-resizer {

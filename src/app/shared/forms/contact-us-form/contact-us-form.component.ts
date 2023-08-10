@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Output, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Output, ViewChild, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ContactUsForm } from '../../interfaces/forms.interfaces';
 import { CommonModule } from '@angular/common';
@@ -33,6 +33,7 @@ export class ContactUsFormComponent {
     public submitted: boolean = false;
 
     @Output() submitForm: EventEmitter<ContactUsData> = new EventEmitter();
+    @ViewChild(PhoneNumberInputComponent) numberInput: PhoneNumberInputComponent;
 
     public onSubmit(): void {
         if (this.form.invalid) {
@@ -42,6 +43,19 @@ export class ContactUsFormComponent {
 
         this.submitForm.emit(this.form.getRawValue());
         this.submitted = false;
+        this.clearForm();
+    }
+
+    public clearForm(): void {
+        Object.keys(this.form.controls).forEach(control => {
+            this.form.get(control).setValue('');
+            this.form.get(control).markAsPristine();
+        })
+        this.numberInput.phoneNumberForm.controls.country.setValue({
+            logo: 'https://flagcdn.com/fr.svg',
+            code: '+33'
+        });
+        this.numberInput.phoneNumberForm.controls.phoneNumber.setValue('');
         this.cdr.detectChanges();
     }
 

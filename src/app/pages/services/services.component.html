@@ -1,1 +1,47 @@
-<p>services works!</p>
+<section>
+    <img src="../../../assets/images/Vector-1.svg" class="ellipse vector-first">
+    <img src="../../../assets/images/Vector-2.svg" class="ellipse vector-second">
+    <div *ngFor="let item of helpStrategies; index as i;" class="help-strategies">
+        <div class="content-block" [ngClass]="{'reverse left-box': i % 2 !== 0, 'right-box': i % 2 === 0}">
+            <div class="content-block-text">
+                <h3>{{ item.title }}</h3>
+                <p [innerHTML]="item.description"></p>
+                <ul>
+                    <li *ngFor="let list of item.list">{{ list }}</li>
+                </ul>
+            </div>
+            <div class="content-block-img" [ngClass]="item.groupClass">
+                <img [ngSrc]="item.imgSrc" class="content-block-img-main" [width]="item.imgSize" [height]="item.imgSize">
+                <img ngSrc="../../../assets/images/Ellipse-1-group.svg" class="ellipse first" width="85" height="85">
+                <img ngSrc="../../../assets/images/Ellipse-2-group.svg" class="ellipse second" width="19" height="19">
+                <img ngSrc="../../../assets/images/Ellipse-3-group.svg" class="ellipse third" width="39" height="39">
+                <img ngSrc="../../../assets/images/Ellipse-4-group.svg" class="ellipse fourth" width="113" height="113">
+                <div class="ellipse blur-first"></div>
+                <div class="ellipse blur-second"></div>
+            </div>
+        </div>
+    </div>
+    <div class="service-plans">
+        <h3>Our Service Plans</h3>
+        <div class="plan-cards">
+            <div *ngFor="let item of servicePlans" class="plan-card-wraper" [ngClass]="{'active-card': item.activeClass}">
+                <div class="plan-card">
+                    <div class="active-card-header" *ngIf="item.activeClass">
+                        <p>MOST POPULAR</p>
+                    </div>
+                    <div>
+                        <h4>{{ item.title }}</h4>
+                        <ul>
+                            <li *ngFor="let list of item.list">{{ list }}</li>
+                        </ul>
+                        <p *ngIf="item.list2">Individuals</p>
+                        <ul>
+                            <li *ngFor="let list of item.list2">{{ list }}</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-main" routerLink="/contact-us">Book a Free Strategy Session</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
@@ -13,7 +13,6 @@ import { ContactUsService } from '../../_services/contact-us.service';
 @Component({
     standalone: true,
     selector: 'app-phone-number-input',
-    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './phone-number-input.component.html',
     styleUrls: ['./phone-number-input.component.scss'],
     imports: [
@@ -34,7 +33,7 @@ export class PhoneNumberInputComponent extends BaseInputAbstraction implements O
     public countries: any[];
     public showCountriesCode: boolean = false;
 
-    public readonly phoneNumberForm: FormGroup<PhoneNumberForm> = this.getContactForm();
+    public phoneNumberForm: FormGroup<PhoneNumberForm> = this.getContactForm();
     @ViewChild('phoneCodeContainer') phoneCodeContainer: ElementRef;
 
     constructor() {

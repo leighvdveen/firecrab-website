@@ -1,0 +1,435 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+section {
+    overflow: hidden;
+    @include box-model(100%, fit-content, $mainBlack, 0, 174px 92px 26px);
+
+    .ellipse {
+        position: absolute;
+    }
+
+    .help-strategies {
+        @include box-model(70%, fit-content, transparent, 0 auto);
+    }
+
+    .content-block {
+        min-height: 365px;
+        margin-bottom: 120px;
+        @include flexbox(space-between, unset);
+
+        h3 {
+            margin-bottom: 47px;
+        }
+
+        p,
+        ul {
+            @include fonts(20px, 400, 129%, $textSecondary);
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            margin-left: 30px;
+        }
+
+        &-text {
+            max-width: 607px;
+        }
+
+        &-img {
+            position: relative;
+            align-self: flex-end;
+            @include box-model(fit-content, fit-content, transparent);
+
+            &-main {
+                position: relative;
+                z-index: 10;
+            }
+        }
+
+        .blur {
+            &-first {
+                transform: rotate(173.76deg);
+                transform-origin: 0 0;
+                box-shadow: 210px 210px 210px;
+                filter: blur(210px);
+                right: -370px;
+                @include box-model(299.74px, 373.35px, $ellipseColor);
+            }
+
+            &-second {
+                transform: rotate(-13.80deg);
+                transform-origin: 0 0;
+                box-shadow: 310px 310px 310px;
+                filter: blur(310px);
+                bottom: -50px;
+                @include box-model(264.26px, 329.16px, $secondaryEllipseColor);
+            }
+        }
+
+        .group {
+            &-one {
+                .first {
+                    z-index: 1;
+                    @include position(absolute, unset, unset, -21px, 19px);
+                }
+
+                .second {
+                    @include position(absolute, 18px, unset, unset, 10px);
+                }
+
+                .third {
+                    @include position(absolute, -15px, 101px, unset, unset);
+                }
+
+                .fourth {
+                    @include position(absolute, unset, unset, 14px, -37px);
+                }
+            }
+
+            &-two {
+                .first {
+                    @include position(absolute, unset, 9px, 45px, unset);
+                }
+
+                .second {
+                    @include position(absolute, -13px, unset, unset, 2px);
+                }
+
+                .third {
+                    @include position(absolute, -33px, 37px, unset, unset);
+                }
+
+                .fourth {
+                    @include position(absolute, unset, unset, -50px, -54px);
+                }
+            }
+
+            &-three {
+                .first {
+                    @include position(absolute, unset, 33px, 92px, unset);
+                }
+
+                .second {
+                    @include position(absolute, 22px, unset, unset, 59px);
+                }
+
+                .third {
+                    @include position(absolute, -11px, 73px, unset, unset);
+                }
+
+                .fourth {
+                    @include position(absolute, unset, unset, 10px, -9px);
+                }
+            }
+
+            &-four {
+                .first {
+                    @include position(absolute, 134px, 28px, unset, unset);
+                }
+
+                .second {
+                    @include position(absolute, 30px, unset, unset, 77px);
+                }
+
+                .third {
+                    @include position(absolute, -36px, 65px, unset, unset);
+                }
+
+                .fourth {
+                    @include position(absolute, unset, unset, 35px, 1px);
+                }
+            }
+        }
+    }
+
+    .reverse {
+        flex-direction: row-reverse;
+    }
+
+    .right-box {
+        padding-right: 90px;
+    }
+
+    .left-box {
+        padding-left: 90px;
+    }
+
+    .vector {
+        &-first {
+            @include position(absolute, -20px, unset, unset, 0);
+        }
+
+        &-second {
+            width: 100%;
+            @include position(absolute, 90%, 0, unset, unset);
+        }
+    }
+
+    .service-plans {
+        width: 70%;
+        margin: auto;
+
+        h3 {
+            margin-bottom: 81px;
+        }
+
+        .btn-main {
+            font-size: 18px;
+            border: none;
+            @include box-model(304px, 69px, linear-gradient(178deg, $mainRed 0%, $mainYellow 100%), 0 auto, 0 10px);
+
+            &:active {
+                background: $mainRed;
+                box-shadow: none;
+            }
+        }
+
+        ul {
+            margin-left: 35px;
+            @include fonts(18px, 400, 146.5%, $textMain);
+        }
+
+        li {
+            list-style-image: url('../../../assets/images/check-arrow.svg');
+            padding-inline-start: 11px;
+            padding-bottom: 15px;
+        }
+
+        p {
+            text-align: center;
+            margin: 24px 0 35px;
+            @include fonts(20px, 500, 146.5%, $textMain);
+        }
+
+        h4 {
+            margin-bottom: 25px;
+            margin-top: 5px;
+            text-align: center;
+            @include fonts(28px, 500, 146.5%, $textMain);
+        }
+
+        .plan {
+            &-cards {
+                @include flexbox(center, unset);
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+
+            &-card {
+                max-width: 392px;
+                height: fit-content;
+                min-height: 626px;
+                border-radius: 25px;
+                padding: 28px;
+                display: grid;
+                grid-template-rows: 1fr auto;
+                position: relative;
+                z-index: 100;
+                background: black;
+
+                &-wraper {
+                    max-width: 392px;
+                    background: linear-gradient(159deg, $mainRed 0%, $mainYellow 100%);
+                    padding: 2px;
+                    border-radius: 25px;
+                    height: fit-content;
+                }
+            }
+        }
+
+        .active-card {
+            position: relative;
+            border-radius: 0 0 25px 25px;
+            background: linear-gradient(159deg, $mainRed 0%, $mainYellow 100%);
+            padding: 0 0 4px;
+
+            .plan-card {
+                background-color: transparent;
+                padding: 28px 28px 24px;
+            }
+
+            &-header {
+                border-radius: 25px 25px 0 0;
+                @include box-model(100%, 50px, linear-gradient(180deg, $mainRed 0%, $mainYellow 100%));
+                @include flexbox(center, center);
+                @include position(absolute, -32px, 0, unset, 0);
+
+                p {
+                    margin: 0;
+                    font-size: 18px;
+                }
+            }
+
+            .btn-main {
+                border: 1px solid $textMain;
+                background: transparent;
+
+                &:active {
+                    background: $mainRed;
+                    @include border(2px transparent solid);
+                    box-shadow: none;
+                }
+            }
+
+            li {
+                list-style-image: url('../../../assets/images/check-arrow-white.svg');
+            }
+        }
+    }
+}
+
+@media (max-width: 1900px) {
+    .help-strategies,
+    .service-plans {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 1250px) {
+    section {
+        .right-box, .left-box {
+            padding: 0;
+        }
+
+        .content-block-text {
+            max-width: 500px;
+        }
+    }
+}
+
+@media (max-width: 1010px) {
+    section {
+        .service-plans {
+            .plan {
+                &-cards {
+                    @include flexbox(flex-start, center, column);
+                }
+    
+                &-card {
+                    &-wraper {
+                        max-width: 392px;
+                    }
+                }
+            }
+    
+            .active-card {
+                margin-top: 32px;
+            }
+        }
+    
+        .content-block {
+            flex-direction: column !important;
+            gap: 100px;
+            margin-bottom: 100px;
+    
+            &-img {
+                margin: auto;
+            }
+    
+            &-text {
+                max-width: 600px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        .service-plans {
+            .btn-main {
+                width: 100% !important;
+            }
+    
+            .plan {
+                &-cards, &-card-wraper {
+                    width: 100%;
+                }
+            }
+        }
+    
+        .content-block-img-main {
+            max-width: 280px;
+            max-height: 280px;
+        }
+
+        .content-block {
+            .group {
+                &-one {
+                    .first {
+                        bottom: -40px;
+                        right: 50px;
+                        z-index: 1;
+                    }
+    
+                    .second {
+                        top: 18px;
+                        right: 10px;
+                    }
+    
+                    .third {
+                        top: -15px;
+                        left: 50px;
+                    }
+    
+                    .fourth {
+                        bottom: -20px;
+                        right: -20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    section {
+        padding: 174px 40px 26px;
+    }
+}
+
+@media (max-width: 400px) {
+    section {
+        .content-block-img-main {
+            max-width: 250px;
+            max-height: 250px;
+        }
+
+        .content-block {
+            .group {
+                &-two {
+                    .fourth {
+                        bottom: -50px;
+                        right: -14px;
+                    }
+                }
+    
+                &-three {
+                    .first {
+                        bottom: 92px;
+                        left: -10px;
+                    }
+    
+                    .second {
+                        top: 0;
+                    }
+                }
+    
+                &-four {
+                    .first {
+                        top: 100px;
+                        left: 10px;
+                    }
+    
+                    .fourth {
+                        bottom: 5px;
+                        right: -11px;
+                    }
+                }
+            }
+        }
+    }
+}
