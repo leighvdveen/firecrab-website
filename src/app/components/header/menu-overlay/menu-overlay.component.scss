@@ -22,6 +22,7 @@
     &-link {
         text-decoration: none;
         outline: none;
+        z-index: 100;
         @include fonts(30px, 500, 30.25px, $grayBorder);
 
         &-active {

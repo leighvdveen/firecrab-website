@@ -39,16 +39,7 @@
         @include flexbox(unset, center);
         @include box-model(45%, 100%, inherit, 0, 0 0 0 20px);
         @include fonts(17px, 400, 20px, $textMain);
-
-        option {
-            color: #202020;
-            font-size: 16px;
-
-            &:hover {
-                border-radius: 3px;
-                background: rgba(85, 152, 252, 0.20);
-            }
-        }
+        cursor: pointer;
     }
 }
 
@@ -70,9 +61,12 @@ ul {
     li {
         list-style: none;
         padding: 16px 0px 16px 10px;
+        cursor: pointer;
+        @include fonts(16px, 400, 20px, black);
 
         &:hover {
-            background: rgba(85, 152, 252, 0.20);
+            color: $activeBlue;
+            background: $selectHoverColor;
         }
     }
 

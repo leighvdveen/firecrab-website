@@ -1,0 +1,95 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+section {
+    @include box-model(100%, calc(100vh - 303px), $mainBlack, 0, 100px 0);
+
+    .cover {
+        @include box-model(816px, 466px, linear-gradient(159deg, $mainRed 0%, $mainYellow 100%), auto);
+        @include flexbox(center, center, column);
+        position: relative;
+
+        h1 {
+            font-size: 46.436px;
+            max-width: 436px;
+            margin: 0 10px 38px;
+        }
+
+        p {
+            @include fonts(16.634px, 500, 121%, $textMain);
+            margin: 0 10px 63px;
+            text-align: center;
+        }
+
+        .btn-main {
+            @include buttons(313px, 61px, $mainRed);
+            margin: 0 10px;
+            @include border(1px $textMain solid, 6.930px);
+            @include fonts(17.328px, 500, 129%, $textMain);
+        }
+
+        .logo-img {
+            @include position(absolute, 46px, 16px, unset, unset);
+            width: 124px;
+            height: 74px;
+        }
+    }
+}
+
+
+
+@media (max-width: 850px) {
+    section {
+        @include box-model(100%, fit-content, $mainBlack, 0, 100px 0);
+
+        .cover {
+            @include box-model(408px, 233px, linear-gradient(159deg, $mainRed 0%, $mainYellow 100%), auto);
+            @include flexbox(center, center, column);
+            position: relative;
+
+            h1 {
+                font-size: 23.218px;
+                max-width: 218px;
+                margin: 0 10px 19px;
+            }
+
+            p {
+                @include fonts(8.317px, 500, 121%, $textMain);
+                margin: 0 10px 32px;
+                text-align: center;
+            }
+
+            .btn-main {
+                @include buttons(156.5px, 30.5px, $mainRed);
+                margin: 0 10px;
+                @include border(1px $textMain solid, 3.465px);
+                @include fonts(8.664px, 500, 129%, $textMain);
+            }
+
+            .logo-img {
+                @include position(absolute, 23px, 8px, unset, unset);
+                width: 62px;
+                height: 37px;
+            }
+        }
+    }
+}
+
+@media (max-width: 410px) {
+    section {
+        .cover {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    section {
+        .cover {
+            .logo-img {
+                @include position(relative, 0, 0, unset, unset);
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

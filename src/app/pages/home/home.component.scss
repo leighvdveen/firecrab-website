@@ -21,6 +21,14 @@ section {
         margin-right: 10px;
     }
 
+    .btn-main {
+        background: linear-gradient(159deg, rgb(204 16 2 / 54%) 0%, $mainYellow 100%);
+
+        &:active {
+            background: $mainRed;
+        }
+    }
+
     .vector {
         z-index: 3;
         @include position(absolute, 40px, 0, unset, unset);

@@ -9,6 +9,7 @@ import { provideInputControl } from '../form-control/providers/input-control.pro
 import { CountryCode } from './types/country-code.type';
 import { PhoneNumberForm } from './types/phone-number-form.type';
 import { ContactUsService } from '../../_services/contact-us.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
     standalone: true,
@@ -30,6 +31,7 @@ export class PhoneNumberInputComponent extends BaseInputAbstraction implements O
     private readonly formBuilder: FormBuilder = inject(FormBuilder);
     private readonly contactUsService: ContactUsService = inject(ContactUsService);
     private cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
+    private document: Document = inject(DOCUMENT);
     public countries: any[];
     public showCountriesCode: boolean = false;
 
@@ -39,7 +41,7 @@ export class PhoneNumberInputComponent extends BaseInputAbstraction implements O
     constructor() {
         super();
         this.listenNumberChange();
-        document.addEventListener('click', this.offClickHandler.bind(this));
+        this.document.addEventListener('click', this.offClickHandler.bind(this));
     }
 
     public override ngOnInit(): void {

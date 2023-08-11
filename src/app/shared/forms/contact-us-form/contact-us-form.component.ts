@@ -8,6 +8,7 @@ import { TextareaInputComponent } from '../../inputs/textarea-input/textarea-inp
 import { DateInputComponent } from '../../inputs/date-input/date-input.component';
 import { PhoneNumberInputComponent } from '../../inputs/phone-number-input/phone-number-input.component';
 import { ContactUsData } from '../../interfaces/data.interfaces';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
     standalone: true,
@@ -28,6 +29,7 @@ import { ContactUsData } from '../../interfaces/data.interfaces';
 export class ContactUsFormComponent {
     private readonly formBuilder: FormBuilder = inject(FormBuilder);
     private cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
+    private _dateAdapter = inject(DateAdapter);
 
     public readonly form: FormGroup<ContactUsForm> = this.getContactUsForm();
     public submitted: boolean = false;
@@ -41,7 +43,7 @@ export class ContactUsFormComponent {
             return;
         };
 
-        this.submitForm.emit(this.form.getRawValue());
+        this.submitForm.emit(this.getFormValue());
         this.submitted = false;
         this.clearForm();
     }
@@ -70,5 +72,20 @@ export class ContactUsFormComponent {
             additionalInfo: this.formBuilder.control(''),
             dateOfConsultation: this.formBuilder.control(''),
         });
+    }
+
+    private getFormValue(): ContactUsData {
+        const date = this._dateAdapter.parse(this.form.get('dateOfConsultation').value, 'DD / MMM / YYYY');
+        return {
+            ...this.form.getRawValue(),
+            dateOfConsultation: this.formatDate(date)
+        }
+    }
+
+    private formatDate(date: Date): string {
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear().toString();
+        return `${day}/${month}/${year}`;
     }
 }

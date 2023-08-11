@@ -42,12 +42,16 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.screenWidth = window.innerWidth;
+        if (typeof window !== "undefined") {
+            this.screenWidth = window.innerWidth;
+        }
     }
 
     @HostListener('window:resize', ['$event'])
     onWindowResize() {
-        this.screenWidth = window.innerWidth;
+        if (typeof window !== "undefined") {
+            this.screenWidth = window.innerWidth;
+        }
         if (this.screenWidth > 700) {
             this.closeMenu();
         }

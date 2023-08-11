@@ -165,7 +165,7 @@ section {
 
         &-second {
             width: 100%;
-            @include position(absolute, 90%, 0, unset, unset);
+            @include position(absolute, 80%, 0, unset, unset);
         }
     }
 

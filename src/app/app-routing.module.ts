@@ -28,6 +28,17 @@ const routes: Routes = [
         loadComponent: () => import('./pages/contact-us/contact-us.component').then(mod => mod.ContactUsComponent)
     },
 
+    //Banners route
+    {
+        path: 'banners',
+        loadComponent: () => import('./shared/banner-versions/banner-versions.component').then(mod => mod.BannerVersionsComponent)
+    },
+
+    //Cover route
+    {
+        path: 'cover',
+        loadComponent: () => import('./shared/cover/cover.component').then(mod => mod.CoverComponent)
+    }
 ];
 
 @NgModule({
