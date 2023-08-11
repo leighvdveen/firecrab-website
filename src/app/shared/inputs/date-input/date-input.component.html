@@ -7,13 +7,15 @@
         [id]="id"
         #input
         (dateChange)="setValue(input.value)"
-        [placeholder]="placeholder">
+        [placeholder]="placeholder"
+        [name]="'contactUs_' + id"
+        autocomplete="nope">
     <mat-datepicker-toggle matIconPrefix [for]="picker">
         <mat-icon matDatepickerToggleIcon>
             <img
-                src="../../../../assets/images/fi-rr-calendar.svg"
-                width="24px"
-                height="24px">
+                ngSrc="../../../../assets/images/fi-rr-calendar.svg"
+                width="24"
+                height="24">
         </mat-icon>
     </mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>

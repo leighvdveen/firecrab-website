@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { BaseInputAbstraction } from '../form-control/abstractions/base-input.abstraction';
 import { provideInputControl } from '../form-control/providers/input-control.provider';
+import { NgOptimizedImage } from '@angular/common';
 
 export class CustomDateAdapter extends NativeDateAdapter {
     override format(date: Date): string {
@@ -30,7 +31,8 @@ export class CustomDateAdapter extends NativeDateAdapter {
         MatFormFieldModule,
         MatNativeDateModule,
         MatInputModule,
-        MatIconModule
+        MatIconModule,
+        NgOptimizedImage
     ],
     providers: [
         {

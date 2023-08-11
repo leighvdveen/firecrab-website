@@ -3,8 +3,8 @@
     class="input-group">
     <div class="input-phone">
         <div class="input-phone-code" (click)="showCountriesCode = !showCountriesCode" #phoneCodeContainer>
-            <p><img [src]="countryCode.logo" width="28px" height="19px" style="margin-right: 10px;">{{ countryCode.code }}</p>
-            <img src="../../../../assets/images/small-chevron-down.svg" style="margin-left: 5px">
+            <p><img [ngSrc]="countryCode.logo" width="28" height="19" style="margin-right: 10px;">{{ countryCode.code }}</p>
+            <img ngSrc="../../../../assets/images/small-chevron-down.svg" style="margin-left: 5px" width="16" height="16">
         </div>
         <input
             [id]="id"
@@ -12,14 +12,16 @@
             formControlName="phoneNumber"
             type="tel" class="input-phone-number"
             placeholder="000-000-000"
-            mask='000-000-000'>
+            mask='000-000-000'
+            [name]="'contactUs_' + id"
+            autocomplete="nope">
     </div>
     <ul *ngIf="showCountriesCode">
         <li *ngFor="let item of countries; index as i" [ngClass]="{'even': i % 2 === 0 }" (click)="onSelectCode(item)">
             <img
-                [src]="item.flags.svg"
-                width="20px"
-                height="12px"
+                [ngSrc]="item.flags.svg"
+                width="20"
+                height="12"
                 style="margin-right: 10px;"/>
             {{ item.name.common }}
         </li>

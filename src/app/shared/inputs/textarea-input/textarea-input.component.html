@@ -7,5 +7,7 @@
     #input
     (keyup)="setValue(input.value)"
     (focus)="onTouched()"
-    (keyup)="resize()">
+    (keyup)="resize()"
+    [name]="'contactUs_' + id"
+    autocomplete="nope">
 </textarea>
