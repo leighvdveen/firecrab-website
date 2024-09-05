@@ -26,8 +26,8 @@
     flex-direction: $flex-direction;
 }
 
-@mixin fonts($font-size, $font-weight, $line-height, $color, $font-style: normal, $font-family: $fontPoppins) {
-    font-family: $font-family;
+@mixin fonts($font-size, $font-weight, $line-height, $color, $font-style: normal) {
+    font-family: 'Open Sans', sans-serif;
     font-size: $font-size;
     font-style: $font-style;
     font-weight: $font-weight;

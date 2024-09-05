@@ -107,7 +107,7 @@ section {
         &-description {
             max-width: 345px;
             text-transform: capitalize;
-            @include fonts(16px, 400, 32px, $textSecondary, normal, $fontGrotesk);
+            @include fonts(16px, 400, 32px, $textSecondary, normal);
         }
 
         &-card {
@@ -257,7 +257,7 @@ section {
 
         &-description {
             text-transform: capitalize;
-            @include fonts(16px, 400, 32px, $textSecondary, normal, $fontGrotesk);
+            @include fonts(16px, 400, 32px, $textSecondary, normal);
         }
     }
 

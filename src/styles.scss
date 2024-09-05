@@ -8,6 +8,9 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+// Import Open Sans font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -39,6 +42,7 @@ $firecrab-theme: mat.define-light-theme((color: (primary: $firecrab-primary,
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
@@ -71,8 +75,10 @@ h3 {
 html,
 body {
     height: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
+// Angular Material-specific overrides
 .mat-calendar-table-header th,
 .mat-calendar-body-label,
 .mat-calendar-body-cell-content,
