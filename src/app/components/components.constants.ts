@@ -31,5 +31,6 @@ export const ContactsData = [
         imgSrc: '../../../assets/images/linkedIn.svg',
         width: 19,
         height: 20
+        path: 'https://www.linkedin.com/company/firecrab-tech-writing-solutions/'
     },
 ];
